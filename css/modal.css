@@ -1,0 +1,299 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.disable-scroll{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.header__pop-modal{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(0,0,0,.7);
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    vertical-align: top;
+    opacity: 0;
+    -webkit-transition: opacity var(--transition-time),visibility var(--transition-time);
+    -o-transition: opacity var(--transition-time),visibility var(--transition-time);
+    transition: opacity var(--transition-time),visibility var(--transition-time);
+}
+.header__pop-modal::before {
+    content: "";
+    vertical-align: middle;
+    height: 100%;
+}
+.modal__open{
+    display: block;
+    opacity: 1;
+}
+.header__nav__link {
+     text-decoration: none;
+     font-size: 20px;
+     color: black;
+ }
+.header__popup{
+    position: relative;
+    width: 450px;
+    height: 400px;
+    top: 149px;
+    left: 28%;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background: #FFFFFF;
+    border-radius: 0px;
+    border: none;
+    z-index: 10;
+}
+.modal__head{
+    color: black;
+    font-size: 18px;
+}
+
+.header__group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__popup-head-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.header__close{
+    max-width: 43px;
+    max-height: 43px;
+}
+.header__modal-head{
+    margin-bottom: 18px;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.form__input{
+    width: 100%;
+   height: 25px;
+   margin-bottom: 2px;
+   border: none;
+   border-bottom: 1px solid #C8C5D1;
+   background-color: transparent;
+   color: aqua;
+   outline: none;
+}
+.form__input::placeholder {
+    text-align: top;
+    font-size: 12px;
+    vertical-align: top;
+}
+.form__contact {
+    margin-bottom: 0;
+    border: 1px solid aqua;
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+.header__modal-description{
+    margin-bottom: 29px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.header__modal-reg{
+    color: #fb6402;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.header__form{
+    margin-bottom: 31px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 29px;
+    border-bottom: 1px solid rgba(230, 232, 236, 0.4);
+}
+.header__input-form.is-invalid{
+    border: 2px solid red;
+}
+.header__input-form{
+    position: relative;
+    margin-bottom: 30px;
+    margin-right: 27px;
+    padding: 1px 1px 1px 29px;
+    width: 100%;
+    height: 66px;
+    border: 1px solid #fb6402;
+    border-radius: 40px;
+    background-color: transparent;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #A1A6B4;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.error{
+    position: absolute;
+    left: 95px;
+    top: 181px;
+    color: red;
+}
+.errorPas{
+    position: absolute;
+    left: 95px;
+    top: 284px;
+    color: red;
+}
+.header__submit {
+    width: 35%;
+    height: 68px;
+    border-radius: 36px;
+    background-color: #fb6402;
+    border: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.show_popup{
+    display: block;
+}
+.fade.animate-open {
+    opacity: 1;
+}
+.fade, .fade.animate-open {
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+.is-open {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.5s,visibility 1s;
+    -o-transition: opacity 0.5s,visibility 1s;
+    transition: opacity 0.5s,visibility 1s;
+}
+.header__modal-bottom{
+    width: 238px;
+    height: 91px;
+}
+.header__modal-text{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.header__social {
+    padding: 32px 6px 7px 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+.header__form-private{
+    color: #FFFFFF;
+}
+.header__form-private a{
+    color: #fb6402;
+}
+.header__form-private:hover a{
+    color: #AA9DFA;
+    text-decoration: underline;
+    outline: none;
+}
+
+.footer__form-private a{
+    color: #fb6402;
+}
+.footer__form-private:hover a{
+    color: #AA9DFA;
+    text-decoration: underline;
+    outline: none;
+}
+.footer__modal-reg{
+    color: #6c8ba7;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+/* Tooltip */
+
+.header__tooltip{
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 110px;
+    right: 0px;
+    padding: 20px 20px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #121723;
+}
+.tooltip-open{
+    display: block;
+    visibility: visible;
+    z-index: 110;
+}
+.header__tooltip h2{
+    width: 100%;
+    font-size: 34px;
+    color: #FFFFFF;
+}
+.header__tooltip p{
+    width: 100%;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+.label__contacts {
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    padding: 10px 28px;
+    background-color: #C8C5D1;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form__contact {
+    margin-bottom: 0;
+    border: 1px solid aqua;
+    background-color: transparent;
+}
+.open {
+    opacity: 1;
+}
+
+
