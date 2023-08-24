@@ -34,9 +34,6 @@ export default async function clientsGet() {
         year: 'numeric',
         month: 'numeric',
         day: 'numeric',
-        // hour: 'numeric',
-        // minute: 'numeric',
-        
       };
      
       return date.toLocaleString("ru", options);
@@ -44,12 +41,8 @@ export default async function clientsGet() {
     function getHours(dateString) {
       const time = new Date(dateString);
       const options = {
-        // year: 'numeric',
-        // month: 'numeric',
-        // day: 'numeric',
         hour: 'numeric',
-        minute: 'numeric',
-        
+        minute: 'numeric', 
       };
      
       return time.toLocaleString("ru", options);
