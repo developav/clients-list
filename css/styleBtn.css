@@ -1,0 +1,57 @@
+.btn-sort{
+    width: 110px;
+    word-break: break-all;
+    padding: 1px 20px;
+    background-color: inherit;
+    border: none;
+    color: #B0B0B0;
+}
+.btn-sort__last {
+    width: 110px;
+    background-image: url('../img/Vector\ \(1\).svg');
+    background-repeat: no-repeat;
+    background-position: 91px 18px;
+}
+.btn-sort__id{
+    text-align: left;
+    display: block;
+    width: 100%;
+    padding: 10px 0 8px 24px;
+    font-size: 12px;
+    background-image: url('../img/Vector\ \(1\).svg');
+    background-repeat: no-repeat;
+    background-position: 40px 14px;
+}
+.btn-sort__fio {
+    font-size: 12px;
+    display: inline-block;
+    width: 185px;
+    padding: 0;
+    text-align: left;
+    letter-spacing: -0.1px;
+    background-image: url('../img/Body\ 38.svg');
+    background-repeat: no-repeat;
+    background-position: 140px 2px;
+}
+.btn-sort__create{
+    width: 124px;
+    word-break: break-all;
+    padding: 1px 20px;
+    text-align: left;
+    letter-spacing: -0.1px;
+    background-image: url('../img/Vector.svg');
+    background-repeat: no-repeat;
+    background-position: 78px 18px;
+}
+.clients__add-button {
+    display: block;
+    margin: 0 auto;
+    width: 216px;
+    height: 44px;
+    font-size: 14px;
+    color: #9873FF;
+    background-image: url('../img/addpeople.svg');
+    background-repeat: no-repeat;
+    background-position: 14px 10px;
+    border: 1px solid #9873FF;
+}

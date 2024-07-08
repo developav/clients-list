@@ -1,0 +1,16 @@
+.btn__delete-change-modal {
+    background-color: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+.deleteContacts__button {
+    min-width: 27px;
+    min-height: 100%;
+    outline: none;
+    background-color: #E7E5EB;
+    border: 1px solid #C8C5D1;
+    background-image: url('../img/chanceltel.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}

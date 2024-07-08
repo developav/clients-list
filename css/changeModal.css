@@ -1,26 +1,20 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
-.disable-scroll{
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
+.change__btn {
+    width: 100px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    background-image: url('../img/edit.svg');
+    background-repeat: no-repeat;
+    background-position: 0px 1px;
 }
-.header__pop-modal{
+.header__change-modal{
     display: none;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
+    z-index: 100;
     background-color: rgba(0,0,0,.7);
     cursor: pointer;
     overflow-y: auto;
@@ -30,6 +24,11 @@
     -webkit-transition: opacity var(--transition-time),visibility var(--transition-time);
     -o-transition: opacity var(--transition-time),visibility var(--transition-time);
     transition: opacity var(--transition-time),visibility var(--transition-time);
+}
+.header__change-modal::before {
+    content: "";
+    vertical-align: middle;
+    height: 100%;
 }
 .header__pop-modal::before {
     content: "";
@@ -41,60 +40,65 @@
     opacity: 1;
 }
 .header__nav__link {
-     text-decoration: none;
-     font-size: 20px;
-     color: black;
- }
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
 .header__popup{
-    position: relative;
-    width: 450px;
-    height: 400px;
-    top: 149px;
-    left: 28%;
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background: #FFFFFF;
-    border-radius: 0px;
-    border: none;
-    z-index: 10;
+   position: relative;
+   width: 450px;
+   min-height: 400px;
+   margin: 0 auto;
+   padding: 15px 0px 30px 0px;
+   top: 8%;
+   overflow: hidden;
+   background: #FFFFFF;
+   border-radius: 0px;
+   border: none;
+   z-index: 10;
 }
 .modal__head{
-    color: black;
-    font-size: 18px;
+   margin-right: 5px;
+   color: black;
+   font-size: 18px;
 }
 
 .header__group{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+   display: flex;
+   flex-direction: row;
+   align-items: baseline;
+   justify-content: space-between;
+   padding: 0 25px;
 }
 .header__popup-head-group{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
 }
 .header__close{
-    max-width: 43px;
-    max-height: 43px;
+   max-width: 43px;
+   max-height: 43px;
 }
 .header__modal-head{
-    margin-bottom: 18px;
-    font-size: 48px;
-    line-height: 48px;
-    font-weight: 400;
-    color: #FFFFFF;
+   margin-bottom: 18px;
+   font-size: 48px;
+   line-height: 48px;
+   font-weight: 400;
+   color: #FFFFFF;
 }
 .form__input{
     width: 100%;
    height: 25px;
    margin-bottom: 2px;
    border: none;
+   font-size: 18px;
    border-bottom: 1px solid #C8C5D1;
    background-color: transparent;
-   color: aqua;
+   color: black;
+   font-weight: bold;
    outline: none;
 }
+
 .form__input::placeholder {
     text-align: top;
     font-size: 12px;
@@ -103,6 +107,8 @@
 .form__contact {
     margin-bottom: 0;
     border: 1px solid aqua;
+    color: #121723;
+    font-size: 14px;
     background-color: transparent;
     margin-bottom: 0;
 }
@@ -273,10 +279,16 @@
     color: #FFFFFF;
 }
 .label__contacts {
+    display: none;
+    opacity: 0;
     width: 100%;
+    flex-direction: column;
+    padding: 25px 30px;
+    background-color: #F4F3F6;
+}
+.contacts__group {
     display: flex;
-    padding: 10px 28px;
-    background-color: #C8C5D1;
+    flex-direction: row;
 }
 #form{
     display: flex;
@@ -284,13 +296,164 @@
     justify-content: center;
     align-items: center;
 }
+#formChange {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .form__contact {
+    min-height: 37px;
     margin-bottom: 0;
-    border: 1px solid aqua;
-    background-color: transparent;
+    padding: 8px 12px;
+    border-top: 1px solid #C8C5D1;
+    border-bottom: 1px solid #C8C5D1;
+    
+    background-color: #F4F3F6;
+}
+.form__contact::placeholder{
+    color: #B0B0B0;
 }
 .open {
+    display: block;
     opacity: 1;
+}
+.btn__add_contact{
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+    background-image: url('../img/add.svg');
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+    background-repeat: no-repeat;
+    background-position: 142px 13px;
+    background-color: #F4F3F6;
+}
+.btn__save {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 147px;
+    height: 44px;
+    color: #FFFFFF;
+    background-color: #9873FF;
+    border: none;
+}
+#submit-btn {
+    width: 147px;
+    height: 44px;
+    padding: 12.5px 35px;
+    background-color: #9873FF;
+    border: none;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+.chancel__close {
+    text-decoration: underline;
+    color: #333333;
+}
+#lastName{
+    margin-bottom: 26px;
+}
+
+
+/*Стилизация модального окна удаления клиента*/
+
+.hide {
+    display: none;
+}
+.modal__group-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 27px 88px;
+    width: 450px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    top: 30%;
+    overflow: hidden;
+    border-radius: 0px;
+    border: none;
+    z-index: 10;
+}
+.modal__group{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(0,0,0,.7);
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    vertical-align: top;
+    opacity: 1;
+    -webkit-transition: opacity var(--transition-time),visibility var(--transition-time);
+    -o-transition: opacity var(--transition-time),visibility var(--transition-time);
+    transition: opacity var(--transition-time),visibility var(--transition-time);
+}
+.modal__group-head {
+    font-size: 18px;
+    font-weight: bold;
+}
+.modal__group-text {
+    font-size: 14px;
+    text-align: center;
+}
+.modal__group-delete-btn {
+    min-width: 130px;
+    text-align: center;
+    padding: 15.5px 0;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    background-color: #9873FF;
+}
+.modal__group-cancel {
+    font-size: 12px;
+    text-decoration: underline;
+}
+.modal__group-cross {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 17px;
+    right: 14px;
+    background-repeat: no-repeat;
+    background-image: url('../img/Union.svg');
+}
+.contacts__container {
+    opacity: 1;
+    width: 100%;
+    flex-direction: column;
+    padding: 25px 30px;
+    background-color: #F4F3F6;
+}
+.btn__add_contact-change{
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+    background-image: url(../img/add.svg);
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+    background-repeat: no-repeat;
+    background-position: 142px 13px;
+    background-color: #F4F3F6;
+}
+.label__last {
+    margin-bottom: 25px;
+}
+#modal__id_clients{
+    margin-right: auto;
+    color: #B0B0B0;
+    font-size: 12px;
 }
 
 
