@@ -333,4 +333,6 @@ li{
     font-size: 14px;
     color: var(--color-silver-chalice);
 }
-   
+.add__effect{
+    background-color: #9873FF;
+}
