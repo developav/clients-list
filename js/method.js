@@ -17,7 +17,7 @@ export async function clientsGet() {
   }   
 }
 // Преобразовываем полученный список клиеньов
-export async function fetchData() {
+export const fetchData = async () => {
     try{
         const data = await clientsGet();
         return data;

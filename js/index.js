@@ -1,4 +1,4 @@
-import { generateHeadTable } from "./generateTable.js";
+import { generateHeadTable } from "./tranformData.js";
 import { generateTable } from './generateTable.js';
 import { fetchData } from "./method.js";
 import { createContactModalAdd } from "./addClients.js";

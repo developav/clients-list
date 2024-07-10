@@ -64,7 +64,7 @@ table {
 
  /* границы ячеек тела таблицы */
  td {
-    padding: 5px 5px;
+    padding: 5px 15px;
     font-size: 14px;
     border-bottom: 1px solid grey;
  }
@@ -117,6 +117,7 @@ li{
     color: #B0B0B0;
 }  
 .select {
+    padding-left: 12px;
     min-height: 37px;
     min-width: 123px;
     position: relative;
@@ -251,9 +252,6 @@ li{
     transition: fill .3s ease-in-out;
     fill: var(--color-emerald);
 }
-
-
-
 .clients__btn:hover {
     transition: color .3s ease-in-out, background-color .3s ease-in-out;
     background-color: var(--color-emerald);
@@ -333,6 +331,51 @@ li{
     font-size: 14px;
     color: var(--color-silver-chalice);
 }
-.add__effect{
-    background-color: #9873FF;
+.client__row-list {
+    padding-left: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
 }
+.contacts__list {
+    margin-right: 3px;
+    
+}
+[data-tooltip]::after {
+    content: attr(data-tooltip); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    width: fit-content; /* Ширина подсказки */
+    height: 38px;
+    left: 0px; top: 0; /* Положение подсказки */
+    background: url('../img/Union.svg'); /* Синий цвет фона */
+    background-position: center;
+    color: #fff; /* Цвет текста */
+    padding: 0.5em; /* Поля вокруг текста */
+    pointer-events: none; /* Подсказка */
+    opacity: 0; /* Подсказка невидима */
+    transition: 1s; /* Время появления подсказки */
+} 
+[data-tooltip]:hover::after {
+    opacity: 1; /* Показываем подсказку */
+    top: -3em; /* Положение подсказки */
+}
+
+.button__group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.date__time {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+  

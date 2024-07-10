@@ -1,5 +1,6 @@
 import {addContact} from "./contact.js";
 import  { deleteClient }  from "./method.js";
+import { createContactTypeSelect } from "./contact.js";
 
 const modal = document.querySelector('.header__change-modal');
 const buttonClose = document.querySelector('.header__close-change');
@@ -40,25 +41,6 @@ export const changeClient = () => {
                   const nameField = document.getElementById('nameChange');
                   const lastNameField = document.getElementById('lastNameChange');
                   const idField = document.getElementById('modal__id_clients');
-                
-                  const contactTypes = ['Телефон', 'Доп телефон', 'Email', 'Vk','Facebook'];
-  
-                  function createContactTypeSelect(selectedType, index) {
-                      const select = document.createElement('select');
-                      select.classList.add('select');
-                      select.id = `contactType${index}`;
-                      contactTypes.forEach(type => {
-                          const option = document.createElement('option');
-                          option.value = type;
-                          option.textContent = type;
-                          if (type === selectedType) {
-                              option.selected = true;
-                          }
-                          select.appendChild(option);
-                      });
-      
-                      return select;
-                  }
   
                   buttonAddChangeContact.addEventListener('click', (e) => {
                       e.preventDefault();

@@ -10,7 +10,16 @@
     outline: none;
     background-color: #E7E5EB;
     border: 1px solid #C8C5D1;
-    background-image: url('../img/chanceltel.svg');
+    background-image: url('../img/cancel.svg');
     background-repeat: no-repeat;
     background-position: center;
+}
+.delete__btn {
+    width: 100px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    background-image: url('../img/cancel.svg');
+    background-repeat: no-repeat;
+    background-position: 0px 1px;
 }
