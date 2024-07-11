@@ -23,3 +23,13 @@
     background-repeat: no-repeat;
     background-position: 0px 1px;
 }
+.modal__group-cross {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 17px;
+    right: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/close.svg');
+}
