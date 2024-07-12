@@ -3,7 +3,7 @@ import { getHours } from './tranformData.js';
 import { typeText } from './contact.js';
 import { deleteSearchClients } from "./deleteClients.js";
 import { changeClient } from "./changeClient.js";
-import { filterClientsaByName } from './tranformData.js';
+
 import { fetchData } from "./method.js";
 import { generateHeadTable } from './tranformData.js';
 
@@ -12,13 +12,11 @@ let sortField = 'id'; // 'id' для сортировки по id, 'name' для
 
 export async function generateTable(fetchDataFunction) {
   const tableBody = document.querySelector('.clients__list');
-  tableBody.innerHTML = ' '; // Очищаем таблицу перед заполнением
+  tableBody.innerHTML = ''; // Очищаем таблицу перед заполнением
   const clients = await fetchDataFunction;
-  if (clients.length === 0) { // исправлено 'lenght' на 'length'
-    console.log('no data');
+  if (clients.length === 0) {
     return;
   }
-
   // Сортировка клиентов по id
   const sortedClients = sortByField(clients,sortField, sortDirection);
 
@@ -31,12 +29,7 @@ export async function generateTable(fetchDataFunction) {
     const updateTime = getHours(updatedAt);
 
     // Фильтр при вводе input
-    const inputFio = document.getElementById('inputFio');
-    inputFio.addEventListener('input', (event) => {
-      const query = event.target.value;
-      const filteredClients = filterClientsaByName(clients, query);
-      generateTable(() => Promise.resolve(filteredClients)); // исправлено вызов функции
-    });
+    
 
     const shortId = id.split('');
     const shortIdSlice = shortId.slice(6, 13);
@@ -79,13 +72,14 @@ export async function generateTable(fetchDataFunction) {
   changeClient();
 }
 
+
 function sortByField(clients, field, direction) {
   return clients.sort((a, b) => {
     if (field === 'id') {
       return direction === 'asc' ? a.id - b.id : b.id - a.id;
     } else if (field === 'name') {
-      const nameA = a.name.toLowerCase();
-      const nameB = b.name.toLowerCase();
+      const nameA = `${a.surname} ${a.name} ${a.lastName}.toLowerCase()`;
+      const nameB = `${b.surname} ${b.name} ${b.lastName}.toLowerCase()`;
       if (nameA < nameB) return direction === 'asc' ? -1 : 1;
       if (nameA > nameB) return direction === 'asc' ? 1 : -1;
       return 0;

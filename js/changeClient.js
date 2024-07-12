@@ -80,8 +80,6 @@ export const changeClient = () => {
                   nameField.value = name;
                   lastNameField.value = lastName;
                   idField.textContent= `ID: ${shortIdJoin}`;
-  
-                  console.log(id)
                   const buttonModalDelete = document.querySelector('.btn__delete-change-modal');
                   if(buttonModalDelete) {
                       buttonModalDelete.addEventListener('click', async (e) => {

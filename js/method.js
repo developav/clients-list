@@ -1,4 +1,5 @@
-
+import { filterClientsaByName } from './tranformData.js';
+import { generateTable } from './generateTable.js';
 // Функция получения списка клиентов
 export async function clientsGet() {
   try{
@@ -7,6 +8,12 @@ export async function clientsGet() {
         headers: {'Content-type': 'application/json'},
       });
       const result = await response.json();
+      const inputFio = document.getElementById('inputFio');
+      inputFio.addEventListener('input', async (event) => {
+        const query = event.target.value;
+          const filteredClients = await filterClientsaByName(result, query);
+          generateTable(filteredClients); // исправлено вызов функции
+      });
       console.log(result)
       if (!response.ok) {
         throw new Error('Failed to fetch clients data');

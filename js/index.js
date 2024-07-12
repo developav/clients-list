@@ -4,6 +4,7 @@ import { fetchData } from "./method.js";
 import { createContactModalAdd } from "./addClients.js";
 import { clientPost } from "./addClients.js";
 
+
 const saveButton = document.getElementById('btn__change');
 
 // Функция создания таблицы
@@ -15,6 +16,7 @@ setTimeout(()=> {
     generateTable(fetchData());
   }, 2000);
 
+  
 //Вызов модального окна для добавления клиента
 createContactModalAdd();
 // Функция добавления клиента на сервер
