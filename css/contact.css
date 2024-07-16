@@ -1,0 +1,134 @@
+
+.extra-contacts {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.hidden__contact {
+    display:none;
+  }
+
+.button__show-contact {
+    display: none;
+}
+.button__show-contact:last-child {
+    display: block;
+}
+.show-more-btn {
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 2px solid #9873FF;
+    font-size: 8px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1px;
+}
+.show-more-btn:hover{
+    cursor: pointer;
+}
+.close__contact{
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    background-image: url('../img/close_contact.svg');
+    background-position: center;
+    background-size: 95%;
+}
+.client__row-list {
+    padding-left: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+}
+.contacts__list {
+    margin-right: 3px;
+    
+}
+
+
+
+
+
+/* Tooltip CSS */
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-font-smoothing: antialiased;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9;
+  transition: 0.6s ease-in-out 0.4s;
+}
+
+[data-tooltip]:before {
+  content: "";
+  height: 0;
+  width: 0;
+  top: calc(100% - 9px);
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent #333 transparent;
+}
+
+[data-tooltip]:after {
+  content: attr(data-tooltip);
+  white-space: nowrap;
+  background: #333;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  top: calc(100% + 11px);
+  color: #fff;
+  border-radius: 2px;
+  text-shadow: 0px 1px 1px #000;
+  z-index: 9;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.4s ease-in-out 0.3s;
+}
+
+
+/* Document setup, ignore me */
+div#array {
+  float: left;
+  padding: 1rem 2rem 0 2rem;
+  font-family: arial;
+}
+
+div#array>div {
+  float: left;
+  background: #bbb;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transition: 0.2s ease-in-out;
+}
+
+div#array>div:first-of-type {
+  width: 250px;
+}
+
+div#array>div:last-of-type {
+  width: 200px;
+  height: 200px;
+}
+
+div#array>div:hover {
+  background: #ccc;
+}
+
