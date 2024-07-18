@@ -1,9 +1,19 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular-webfont.woff');
+    src: local('OpenSans-Regular-webfont'), local('OpenSans-Regular-webfont'),
+        url('../fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open sans', sans-serif;
+    font-family: 'OpenSans', sans-serif;
     margin: 0;
     background-color: var(--color-wild-sand);
 }
@@ -64,9 +74,9 @@ table {
 
  /* границы ячеек тела таблицы */
  td {
-    padding: 5px 15px;
+    padding: 5px 10px;
     font-size: 14px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #E3E1E7;
  }
 body{
     min-width: 320px;
@@ -107,15 +117,43 @@ li{
     padding-left: 5px;
     letter-spacing: 0.7px;
     font-size: 25px;
+    font-weight: bold;
 }
 .hidden {
     display:none;
-  }
+}
+
+.clients__list{
+    padding: 20px;
+    background-color: #ffffff;
+}
 
 .clients__head{
     font-size: 12px;
     color: #B0B0B0;
+    width: fit-content;
 }  
+.clients__id{
+    color: #b0b0b0;
+}
+.clients__head-actions{
+    min-width: 220px;
+} 
+.clients-head__contact{
+    min-width: 126px;
+}
+.clients-head__last {
+    min-width: 137px;
+}
+.clients-head__create {
+    min-width: 137px;
+}
+.clients-head__fio{
+    min-width: 261px;
+}
+.clients-head__id {
+    min-width: 60px;
+}
 .select {
     padding-left: 12px;
     min-height: 37px;
@@ -135,8 +173,8 @@ li{
     color:#B0B0B0;
 }
 .content {
+    min-height: 299px;
     padding: 15px;
-    background-color: #ffffff;
     margin-bottom: 50px;
 }
 .clients__heading {
@@ -331,37 +369,6 @@ li{
     font-size: 14px;
     color: var(--color-silver-chalice);
 }
-.client__row-list {
-    padding-left: 14px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    position: relative;
-}
-.contacts__list {
-    margin-right: 3px;
-    
-}
-[data-tooltip]::after {
-    content: attr(data-tooltip); /* Выводим текст */
-    position: absolute; /* Абсолютное позиционирование */
-    width: fit-content; /* Ширина подсказки */
-    height: 38px;
-    left: 0px; top: 0; /* Положение подсказки */
-    background: url('../img/Union.svg'); /* Синий цвет фона */
-    background-position: center;
-    color: #fff; /* Цвет текста */
-    padding: 0.5em; /* Поля вокруг текста */
-    pointer-events: none; /* Подсказка */
-    opacity: 0; /* Подсказка невидима */
-    transition: 1s; /* Время появления подсказки */
-} 
-[data-tooltip]:hover::after {
-    opacity: 1; /* Показываем подсказку */
-    top: -3em; /* Положение подсказки */
-}
 
 .button__group{
     display: flex;
@@ -377,5 +384,6 @@ li{
     align-items: center;
     flex-wrap: wrap;
 }
+
 
   

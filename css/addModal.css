@@ -1,15 +1,4 @@
-.clients__add-button {
-    display: block;
-    margin: 0 auto;
-    width: 216px;
-    height: 44px;
-    font-size: 14px;
-    color: #9873FF;
-    background-image: url('../img/addpeople.svg');
-    background-repeat: no-repeat;
-    background-position: 14px 10px;
-    border: 1px solid #9873FF;
-}
+
 .disable-scroll{
     position: relative;
     overflow: hidden;

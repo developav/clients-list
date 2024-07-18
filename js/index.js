@@ -10,6 +10,7 @@ const saveButton = document.getElementById('btn__change');
 // Функция создания таблицы
 generateHeadTable();
 
+
 //Задержка для прелоадера
 setTimeout(()=> {
     document.querySelector('.check__label').classList.add('hide__loader');
@@ -21,3 +22,5 @@ setTimeout(()=> {
 createContactModalAdd();
 // Функция добавления клиента на сервер
 clientPost();
+
+

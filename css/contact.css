@@ -74,7 +74,8 @@
   content: "";
   height: 0;
   width: 0;
-  top: calc(100% - 9px);
+  transform: rotate(180deg);
+  top: calc(126% - 40px);
   border-style: solid;
   border-width: 10px;
   border-color: transparent transparent #333 transparent;
@@ -82,16 +83,16 @@
 
 [data-tooltip]:after {
   content: attr(data-tooltip);
-  white-space: nowrap;
-  background: #333;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 0.9rem;
-  box-sizing: border-box;
-  top: calc(100% + 11px);
-  color: #fff;
-  border-radius: 2px;
-  text-shadow: 0px 1px 1px #000;
-  z-index: 9;
+    white-space: nowrap;
+    background: #333;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 0.75rem;
+    box-sizing: border-box;
+    top: calc(59% + -53px);
+    color: #fff;
+    border-radius: 2px;
+    text-shadow: 0px 1px 1px #000;
+    z-index: 9;
 }
 
 [data-tooltip]:hover:before,
