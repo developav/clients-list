@@ -13,15 +13,54 @@
     background-image: url('../img/cancel.svg');
     background-repeat: no-repeat;
     background-position: center;
+    outline: none;
+    transition: background 0.1s linear, border 0.3s linear;
+}
+.deleteContacts__button:hover{
+    background-image: url('../img/hoverDel.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid red;
 }
 .delete__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     background-color: transparent;
     border: none;
     font-size: 14px;
+    transition: cursor 0.3s linear, color 0.3s linear;
+}
+.delete__btn::before {
+    width: 17px;
+    height: 17px;
+    content: ' ';
     background-image: url('../img/cancel.svg');
     background-repeat: no-repeat;
     background-position: 0px 1px;
+}
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+.delete__btn.del::before {
+    width: 17px;
+    height: 17px;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    background-image: url('../img/del.svg');
+    animation: rotating 2s linear infinite;
+}
+.delete__btn:hover {
+    cursor: pointer;
+    color: #F06A4D;
 }
 .modal__group-cross {
     width: 25px;

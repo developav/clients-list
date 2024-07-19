@@ -8,8 +8,8 @@ export default function addSelectContact(labelContact){
           optionVk = document.createElement('option'),
           optionFacebook = document.createElement('option'),
           buttonDelContact = document.createElement('button');
-    
     buttonDelContact.className = 'deleteContacts__button';
+    buttonDelContact.setAttribute('data-tooltip','Удалить контакт')
     contactGroup.className = 'contacts__group';
     inputContact.className = 'form__input form-control form__contact contact__input form__contact-input';
     inputContact.setAttribute('name', 'value');

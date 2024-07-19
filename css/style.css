@@ -155,15 +155,32 @@ li{
     min-width: 60px;
 }
 .select {
+    background: #f0f0f0 url('../img/arrow_back_ios.svg') no-repeat right 10px center;
+    border: 1px solid #ccc;
+    padding: 5px 30px 5px 10px; /* Резервируем место под стрелку */
+    border-radius: 4px;
+    -webkit-appearance: none; /* Стиль для Safari */
+    -moz-appearance: none;    /* Стиль для Firefox */
+    appearance: none;         /* Стиль для прочих браузеров */
     padding-left: 12px;
     min-height: 37px;
-    min-width: 123px;
+    width: 118px;
+    resize: none;
     position: relative;
     background-color: #E7E5EB;
     border: 1px solid #C8C5D1;
     font-size: 12px;
     outline: none;
-    appearance: none; 
+}
+.select > option {
+    font-size: 12px;
+    background-color: #F4F3F6;
+}
+.select:active{
+    background: #f0f0f0 url('../img/arrow_back_down.svg') no-repeat right 10px center;
+}
+.select:focus{
+    background: #f0f0f0 url('../img/arrow_back_down.svg') no-repeat right 10px center;
 }
 .clients {
     position: relative;
@@ -385,5 +402,7 @@ li{
     flex-wrap: wrap;
 }
 
-
+.logo__link{
+    outline: none;
+}
   

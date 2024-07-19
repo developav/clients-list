@@ -132,4 +132,25 @@ div#array>div:last-of-type {
 div#array>div:hover {
   background: #ccc;
 }
-
+.contact__link > svg > g{
+  transition: opacity 0.3s linear;
+}
+.contact__link:hover > svg > g {
+ opacity: 1;
+}
+.contact__link > svg > g{
+  transition: opacity 0.3s linear;
+}
+.contact__link > svg > path{
+  transition: opacity 0.3s linear;
+}
+.contact__link:hover > svg > path{
+ opacity: 1;
+}
+.show-more-btn {
+  opacity: 0.7;
+  transition: opacity 0.3s linear;
+}
+.show-more-btn:hover {
+  opacity: 1;
+}

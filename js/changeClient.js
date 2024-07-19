@@ -12,8 +12,13 @@ export const changeClient = () => {
     clientsList.addEventListener('click', async (event) => {
       const changeBtn = event.target.closest('button[data-action="change"]');
       if (changeBtn) {
-        const clientId = changeBtn.dataset.id; // Получаем значение атрибута data-id клиента
-        openChangeModal(clientId)
+        changeBtn.classList.add('load')
+        setTimeout(()=>{
+            const clientId = changeBtn.dataset.id; // Получаем значение атрибута data-id клиента
+            changeBtn.classList.remove('load')
+            openChangeModal(clientId)
+        },1000)
+        
       }
     });
   }

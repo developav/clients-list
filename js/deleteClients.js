@@ -42,8 +42,13 @@ export function deleteSearchClients() {
       buttonDel.addEventListener('click', (event) => {
         const deleteBtn = event.target.closest('button[data-action="delete"]');
         if (deleteBtn) {
-          const clientId = deleteBtn.dataset.id; // Получаем значение атрибута data-id клиента
-          aproveModal(clientId); // Открываем модальное окно подтверждения удаления
+          deleteBtn.classList.add('del')
+          setTimeout(()=>{
+            const clientId = deleteBtn.dataset.id; // Получаем значение атрибута data-id клиента
+            deleteBtn.classList.remove('del')
+            aproveModal(clientId); // Открываем модальное окно подтверждения удаления
+          },1000)
+          
         }
       });
     })

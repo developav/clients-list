@@ -91,6 +91,7 @@
     font-size: 14px;
     color: #9873FF;
     border: 1px solid #9873FF;
+    outline: none;
     transition: color 0.3s linear, background-color 0.3s linear, fill 0.3s linear, cursor 0.3s linear;
 }
 .clients__add-button > svg {
@@ -109,6 +110,24 @@
 }
 .clients__add-button:hover >svg  > path{
     fill: #ffffff;
+}
+.clients__add-button:focus{
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #8052FF;
+    border-color: #8052FF;
+}
+.clients__add-button:focus >svg  > path{
+    fill: #ffffff;
+}
+.clients__add-button:active{
+    cursor: pointer;
+    color: #C8C5D1;
+    background-color: #ffffff;
+    border-color: #C8C5D1;
+}
+.clients__add-button:active >svg  > path{
+    fill: #C8C5D1;
 }
 
 .toggle {

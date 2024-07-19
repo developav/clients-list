@@ -1,11 +1,42 @@
 .change__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     background-color: transparent;
     border: none;
     font-size: 14px;
+    transition: cursor 0.3s linear, color 0.3s linear;
+}
+.change__btn::before{
+    width: 17px;
+    height: 17px;
+    content: ' ';
     background-image: url('../img/edit.svg');
     background-repeat: no-repeat;
     background-position: 0px 1px;
+}
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+.change__btn.load::before {
+    width: 17px;
+    height: 17px;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    background-image: url('../img/load.svg');
+    animation: rotating 2s linear infinite;
+}
+.change__btn:hover {
+    cursor: pointer;
+    color: #9873FF;
 }
 .header__change-modal{
     display: none;
@@ -319,18 +350,32 @@
     opacity: 1;
 }
 .btn__add_contact{
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 50px;
-    padding: 10px 0;
-    background-image: url('../img/add.svg');
+    padding: 15px 0;
     border: none;
     text-align: center;
     font-size: 14px;
+    color: #333333;
     margin-bottom: 25px;
-    background-repeat: no-repeat;
-    background-position: 142px 13px;
+    vertical-align: middle;
+    font-family: 'OpenSans';
+    font-weight: 600;
     background-color: #F4F3F6;
 }
+.btn__add_contact > svg {
+    margin-right: 4px;
+}
+.btn__add_contact:hover{
+    color: #9873FF;
+    cursor: pointer;
+}
+.btn__add_contact:hover > svg >path {
+    fill: #9873FF;
+}
+
 .btn__save {
     text-align: center;
     align-items: center;
@@ -349,6 +394,12 @@
     border: none;
     color: #FFFFFF;
     margin-bottom: 5px;
+}
+#submit-btn:hover {
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #B89EFF;
+        border-color: #9873FF;
 }
 .chancel__close {
     text-decoration: underline;
@@ -413,6 +464,11 @@
     margin-bottom: 5px;
     color: #FFFFFF;
     background-color: #9873FF;
+    transition: background 0.3s linear, cursour 0.3s linear;
+}
+.modal__group-delete-btn:hover {
+    cursor: pointer;
+    background-color: #B89EFF;
 }
 .modal__group-cancel {
     font-size: 12px;
@@ -426,6 +482,11 @@
     right: 14px;
     background-repeat: no-repeat;
     background-image: url('../img/Union.svg');
+    transition: transform 0.3s linear, border 0.4s linear;
+}
+.modal__group-cross:hover{
+    transform: scale(1.2);
+    border: 1px solid red;
 }
 .contacts__container {
     opacity: 1;
