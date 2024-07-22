@@ -346,7 +346,8 @@
     color: #B0B0B0;
 }
 .open {
-    display: block;
+    display: flex;
+    flex-direction: row;
     opacity: 1;
 }
 .btn__add_contact{
@@ -386,7 +387,7 @@
     background-color: #9873FF;
     border: none;
 }
-#submit-btn {
+.btn-primary {
     width: 147px;
     height: 44px;
     padding: 12.5px 35px;
@@ -395,7 +396,7 @@
     color: #FFFFFF;
     margin-bottom: 5px;
 }
-#submit-btn:hover {
+.btn-primary:hover {
         cursor: pointer;
         color: #ffffff;
         background-color: #B89EFF;

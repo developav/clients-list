@@ -1,7 +1,7 @@
 export default function addSelectContact(labelContact){
-    const contactGroup = document.createElement('div'),
-          addSelect = document.createElement('select'),
+    const addSelect = document.createElement('select'),
           inputContact = document.createElement('input'),
+          optionEmpty = document.createElement('option'),
           optionTel = document.createElement('option'),
           optionTelWork = document.createElement('option'),
           optionEmail = document.createElement('option'),
@@ -10,21 +10,22 @@ export default function addSelectContact(labelContact){
           buttonDelContact = document.createElement('button');
     buttonDelContact.className = 'deleteContacts__button';
     buttonDelContact.setAttribute('data-tooltip','Удалить контакт')
-    contactGroup.className = 'contacts__group';
     inputContact.className = 'form__input form-control form__contact contact__input form__contact-input';
     inputContact.setAttribute('name', 'value');
     inputContact.setAttribute('value', '')
     inputContact.setAttribute('autocomplete', 'off');
     inputContact.setAttribute('type', 'text');
     inputContact.setAttribute('placeholder', 'Введите данные контакта');
+    inputContact.setAttribute('id', 'contactInputAdd');
     inputContact.appendChild(buttonDelContact);
     addSelect.setAttribute('name', 'type');
     addSelect.className = 'select';
     labelContact.classList.add('open');
-    labelContact.appendChild(contactGroup);
-    contactGroup.prepend(addSelect);
-    contactGroup.appendChild(inputContact);
-    contactGroup.appendChild(buttonDelContact);
+    labelContact.appendChild(addSelect);
+    labelContact.appendChild(inputContact);
+    labelContact.appendChild(buttonDelContact);
+    optionEmpty.value= ' ';
+    optionEmpty.textContent = '--Выбрать--'
     optionTel.value = 'Телефон';
     optionTel.textContent = 'Телефон';
     optionTel.classList.add('contact__name')
@@ -40,6 +41,7 @@ export default function addSelectContact(labelContact){
     optionFacebook.value = 'Facebook';
     optionFacebook.textContent = 'Facebook';
     optionFacebook.classList.add('contact__name')
+    addSelect.appendChild(optionEmpty)
     addSelect.appendChild(optionTel);
     addSelect.appendChild(optionTelWork);
     addSelect.appendChild(optionEmail);

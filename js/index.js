@@ -22,5 +22,3 @@ setTimeout(()=> {
 createContactModalAdd();
 // Функция добавления клиента на сервер
 clientPost();
-
-

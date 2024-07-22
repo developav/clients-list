@@ -1,14 +1,50 @@
 import addSelectContact from "./generateModalAddClients.js";
 import { addClient } from "./method.js";
+import JustValidate from '../node_modules/just-validate/dist/just-validate.es.js';
 
 export const createContactModalAdd = () => {
     const buttonAddContact = document.querySelector('.btn__add_contact');
     const labelContact = document.querySelector('.label__contacts');
- 
-    buttonAddContact.addEventListener('click', function(){ addSelectContact(labelContact);});    
+    buttonAddContact.addEventListener('click', () => { 
+        addSelectContact(labelContact)
+
+    });    
+
+    const validator  = new JustValidate('#form',{
+        validateBeforeSubmitting: true,
+      });
+      validator .addField('#surname',[
+        {
+          rule: 'customRegexp',
+          value: /[a-z]/gi,   
+          errorMessage: 'Фамилия не состоит из цифр',
+        },
+        {
+          rule: 'required',
+          errorMessage: 'Поле не может быть пустым',
+        } 
+      ])
+      .addField('#name',[
+        {
+          rule: 'customRegexp',
+          value: /[a-z]/gi,   
+          errorMessage: 'Имя не состоит из цифр',
+      },
+      {
+        rule: 'required',
+        errorMessage: 'Поле не может быть пустым',
+      }
+      ])
+      .addField('#lastName',[
+        {
+          rule: 'customRegexp',
+          value: /[a-z]/gi,   
+          errorMessage: 'Отчество не состоит из цифр',
+      }
+      ])
+      
+    
 }
-
-
 export const clientPost = () => {
 
     const form = document.getElementById('form');
@@ -56,3 +92,5 @@ chancelClose.addEventListener('click', () => {
     document.querySelector('.header__pop-modal').classList.remove('modal__open')
 });
 }
+
+
