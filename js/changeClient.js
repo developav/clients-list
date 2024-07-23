@@ -1,7 +1,6 @@
 import {addContact} from "./contact.js";
 import  { deleteClient }  from "./method.js";
 import { createContactTypeSelect } from "./contact.js";
-import JustValidate from './node_modules/just-validate/dist/just-validate.es.js';
 
 const modal = document.querySelector('.header__change-modal');
 const buttonClose = document.querySelector('.header__close-change');
@@ -136,7 +135,7 @@ export async function clientsModalChangeGet(clientId) {
             });
        
     }  
-    const validate = new JustValidate('#formChange',{
+    const validate = new window.JustValidate('#formChange',{
         validateBeforeSubmitting: true,
       })
       validate.addField('#surnameChange',[

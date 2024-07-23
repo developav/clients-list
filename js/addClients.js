@@ -1,6 +1,5 @@
 import addSelectContact from "./generateModalAddClients.js";
 import { addClient } from "./method.js";
-import JustValidate from './node_modules/just-validate/dist/just-validate.es.js';
 
 export const createContactModalAdd = () => {
     const buttonAddContact = document.querySelector('.btn__add_contact');
