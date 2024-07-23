@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-!node_modules/just-validate/
+!node_modules/just-validate/dist/just-validate.es.js
 # local env files
 .env.local
 .env.*.local
