@@ -1,11 +1,11 @@
 import { filterClientsaByName } from './tranformData.js';
 import { generateTable } from './generateTable.js';
 // Функция получения списка клиентов
-// const bolt =uri
-const URL_CLIENT_LIST = new URL('http://localhost:3000/api/clients')
+// // const bolt =uri
+const FTP_SERVER = 'http://localhost:3000/api/clients';
 export async function clientsGet() {
   try{
-    const response = await fetch('URL_CLIENT_LIST/', {
+    const response = await fetch(`${FTP_SERVER}`, {
         method: 'GET',
         headers: {'Content-type': 'application/json'},
       });
@@ -39,7 +39,7 @@ export const fetchData = async () => {
 // Функция удаления клиента
 export async function deleteClient(id) {
     try {
-      const response = await fetch(`URL_CLIENT_LIST/${id}`, {
+      const response = await fetch(`${FTP_SERVER}+${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -53,7 +53,7 @@ export async function deleteClient(id) {
 }
 export const addClient =  async (data) => {
     try{
-        const response =  await fetch('URL_CLIENT_LIST', {
+        const response =  await fetch(`${FTP_SERVER}/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body:JSON.stringify(data),
