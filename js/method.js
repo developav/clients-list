@@ -53,7 +53,7 @@ export async function deleteClient(id) {
 }
 export const addClient =  async (data) => {
     try{
-        const response =  await fetch(`${FTP_SERVER}/`, {
+        const response =  await fetch(`${FTP_SERVER}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body:JSON.stringify(data),
