@@ -38,6 +38,7 @@ export const changeClient = () => {
 };
 export async function clientsModalChangeGet(clientId) {
     const response = await fetch(`${FTP_SERVER} + ${clientId}`, {
+        mode: 'no-cors',
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
@@ -121,6 +122,7 @@ export async function clientsModalChangeGet(clientId) {
          }
   
                 fetch(`${FTP_SERVER} + ${clientId}`, {
+                    mode: 'no-cors',
                     method: 'PATCH',
                     headers: {
                          'Content-Type': 'application/json' 
