@@ -3,6 +3,9 @@ node_modules
 /dist
 
 !/just-validate/
+!/just-validate/dist/
+!/just-validate/dist/modules/
+!/just-validate/dist/utils/
 # local env files
 .env.local
 .env.*.local
