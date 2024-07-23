@@ -37,7 +37,7 @@ export const changeClient = () => {
           // Fetch client data
 };
 export async function clientsModalChangeGet(clientId) {
-    const response = await fetch(`http://localhost:3000/api/clients/${clientId}`, {
+    const response = await fetch(`${FTP_SERVER} + ${clientId}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });

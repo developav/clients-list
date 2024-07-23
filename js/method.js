@@ -2,7 +2,7 @@ import { filterClientsaByName } from './tranformData.js';
 import { generateTable } from './generateTable.js';
 // Функция получения списка клиентов
 // // const bolt =uri
-export const FTP_SERVER = 'http://dpavlov.flerken.spase';
+export const FTP_SERVER = 'https://dpavlov.flerken.spase';
 export async function clientsGet() {
   try{
     const response = await fetch(`${FTP_SERVER}`, {
