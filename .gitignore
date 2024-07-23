@@ -2,7 +2,7 @@
 node_modules
 /dist
 
-!/just-validate/
+!node_modules/just-validate/
 !/just-validate/dist/
 !/just-validate/dist/modules/
 !/just-validate/dist/utils/
