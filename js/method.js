@@ -1,6 +1,7 @@
 import { filterClientsaByName } from './tranformData.js';
 import { generateTable } from './generateTable.js';
 // Функция получения списка клиентов
+// const bolt =uri
 const URL_CLIENT_LIST = new URL('http://localhost:3000/api/clients')
 export async function clientsGet() {
   try{
