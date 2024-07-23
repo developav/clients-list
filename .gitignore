@@ -1,11 +1,7 @@
 .DS_Store
 node_modules
 /dist
-
-!node_modules/just-validate/
-!/just-validate/dist/
-!/just-validate/dist/modules/
-!/just-validate/dist/utils/
+!node_modules/just-validate
 # local env files
 .env.local
 .env.*.local
