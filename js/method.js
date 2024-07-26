@@ -6,6 +6,7 @@ const URL_CLIENT_LIST = new URL('https://dpavlov.flerken.space/api/clients')
 export async function clientsGet() {
   try{
     const response = await fetch(URL_CLIENT_LIST, {
+      mode: 'no-cors',
         method: 'GET',
         headers: {'Content-type': 'application/json'},
       });
