@@ -1,12 +1,11 @@
+
 import { filterClientsaByName } from './tranformData.js';
 import { generateTable } from './generateTable.js';
 // Функция получения списка клиентов
-// // const bolt =uri
-export const FTP_SERVER = 'https://dpavlov.flerken.space/api/clients';
+const URL_CLIENT_LIST = new URL('https://dpavlov.flerken.space/api/clients')
 export async function clientsGet() {
   try{
-    const response = await fetch(`${FTP_SERVER}`, {
-        mode: 'no-cors',
+    const response = await fetch(URL_CLIENT_LIST, {
         method: 'GET',
         headers: {'Content-type': 'application/json'},
       });
@@ -40,7 +39,7 @@ export const fetchData = async () => {
 // Функция удаления клиента
 export async function deleteClient(id) {
     try {
-      const response = await fetch(`${FTP_SERVER}/+${id}`, {
+      const response = await fetch(`http://localhost:3000/api/clients/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -54,8 +53,7 @@ export async function deleteClient(id) {
 }
 export const addClient =  async (data) => {
     try{
-        const response =  await fetch(`${FTP_SERVER}`, {
-            mode: 'no-cors',
+        const response =  await fetch('http://localhost:3000/api/clients', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body:JSON.stringify(data),

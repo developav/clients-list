@@ -1,7 +1,7 @@
 import {addContact} from "./contact.js";
 import  { deleteClient }  from "./method.js";
 import { createContactTypeSelect } from "./contact.js";
-import { FTP_SERVER } from './method.js'
+// import { FTP_SERVER } from './method.js'
 
 const modal = document.querySelector('.header__change-modal');
 const buttonClose = document.querySelector('.header__close-change');
@@ -37,7 +37,7 @@ export const changeClient = () => {
           // Fetch client data
 };
 export async function clientsModalChangeGet(clientId) {
-    const response = await fetch(`${FTP_SERVER} + ${clientId}`, {
+    const response = await fetch(`http://localhost:3000/api/clients/${clientId}`, {
         mode: 'no-cors',
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -121,7 +121,7 @@ export async function clientsModalChangeGet(clientId) {
              updatedUser.contacts.push(updatedContact);
          }
   
-                fetch(`${FTP_SERVER} + ${clientId}`, {
+                fetch(`http://localhost:3000/api/clients/${clientId}`, {
                     mode: 'no-cors',
                     method: 'PATCH',
                     headers: {

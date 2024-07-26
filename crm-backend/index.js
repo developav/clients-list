@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 // импорт стандартных библиотек Node.js
 const { existsSync, readFileSync, writeFileSync } = require('fs');
-const { createServer } = require('https');
+const { createServer } = require('http');
 
 // файл для базы данных
 const DB_FILE = process.env.DB_FILE || './db.json';
