@@ -38,7 +38,6 @@ export const changeClient = () => {
 };
 export async function clientsModalChangeGet(clientId) {
     const response = await fetch(`http://localhost:3000/api/clients/${clientId}`, {
-        mode: 'no-cors',
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     });
@@ -122,7 +121,6 @@ export async function clientsModalChangeGet(clientId) {
          }
   
                 fetch(`http://localhost:3000/api/clients/${clientId}`, {
-                    mode: 'no-cors',
                     method: 'PATCH',
                     headers: {
                          'Content-Type': 'application/json' 
