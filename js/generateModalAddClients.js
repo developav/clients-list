@@ -1,7 +1,6 @@
 export default function addSelectContact(labelContact){
     const addSelect = document.createElement('select'),
           inputContact = document.createElement('input'),
-          optionEmpty = document.createElement('option'),
           optionTel = document.createElement('option'),
           optionTelWork = document.createElement('option'),
           optionEmail = document.createElement('option'),
@@ -24,8 +23,6 @@ export default function addSelectContact(labelContact){
     labelContact.appendChild(addSelect);
     labelContact.appendChild(inputContact);
     labelContact.appendChild(buttonDelContact);
-    optionEmpty.value= ' ';
-    optionEmpty.textContent = '--Выбрать--'
     optionTel.value = 'Телефон';
     optionTel.textContent = 'Телефон';
     optionTel.classList.add('contact__name')
@@ -41,7 +38,6 @@ export default function addSelectContact(labelContact){
     optionFacebook.value = 'Facebook';
     optionFacebook.textContent = 'Facebook';
     optionFacebook.classList.add('contact__name')
-    addSelect.appendChild(optionEmpty)
     addSelect.appendChild(optionTel);
     addSelect.appendChild(optionTelWork);
     addSelect.appendChild(optionEmail);

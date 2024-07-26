@@ -1,7 +1,6 @@
 import {addContact} from "./contact.js";
 import  { deleteClient }  from "./method.js";
 import { createContactTypeSelect } from "./contact.js";
-// import { FTP_SERVER } from './method.js'
 
 const modal = document.querySelector('.header__change-modal');
 const buttonClose = document.querySelector('.header__close-change');
