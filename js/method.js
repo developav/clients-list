@@ -6,7 +6,6 @@ export const FTP_SERVER = 'https://dpavlov.flerken.space/api/clients';
 export async function clientsGet() {
   try{
     const response = await fetch(`${FTP_SERVER}`, {
-        mode: 'no-cors',
         method: 'GET',
         headers: {'Content-type': 'application/json'},
       });
