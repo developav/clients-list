@@ -3,6 +3,7 @@ import { generateTable } from './generateTable.js';
 import { fetchData } from "./method.js";
 import { createContactModalAdd } from "./addClients.js";
 import { clientPost } from "./addClients.js";
+import { clientsGet } from "./method.js";
 
 
 const saveButton = document.getElementById('btn__change');
@@ -14,7 +15,7 @@ generateHeadTable();
 //Задержка для прелоадера
 setTimeout(()=> {
     document.querySelector('.check__label').classList.add('hide__loader');
-    generateTable(fetchData());
+    generateTable(clientsGet());
   }, 2000);
 
   
