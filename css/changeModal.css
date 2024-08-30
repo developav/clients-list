@@ -51,10 +51,11 @@
     overflow-y: auto;
     overflow-x: hidden;
     vertical-align: top;
+ 
     opacity: 0;
-    -webkit-transition: opacity var(--transition-time),visibility var(--transition-time);
-    -o-transition: opacity var(--transition-time),visibility var(--transition-time);
-    transition: opacity var(--transition-time),visibility var(--transition-time);
+    -webkit-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
 }
 .header__change-modal::before {
     content: "";
@@ -66,10 +67,7 @@
     vertical-align: middle;
     height: 100%;
 }
-.modal__open{
-    display: block;
-    opacity: 1;
-}
+
 .header__nav__link {
     text-decoration: none;
     font-size: 20px;
@@ -87,6 +85,14 @@
    border-radius: 0px;
    border: none;
    z-index: 10;
+   transition: opacity 2.3s linear;
+}
+.modal__open{
+    display: block;
+    opacity: 1;
+}
+.modal__open .header__popup {
+    opacity: 1;
 }
 .modal__head{
    margin-right: 5px;
@@ -450,9 +456,10 @@
     overflow-x: hidden;
     vertical-align: top;
     opacity: 1;
-    -webkit-transition: opacity var(--transition-time),visibility var(--transition-time);
-    -o-transition: opacity var(--transition-time),visibility var(--transition-time);
-    transition: opacity var(--transition-time),visibility var(--transition-time);
+    
+    -webkit-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
 }
 .modal__group-head {
     font-size: 18px;

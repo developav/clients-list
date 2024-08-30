@@ -22,9 +22,9 @@
     overflow-x: hidden;
     vertical-align: top;
     opacity: 0;
-    -webkit-transition: opacity var(--transition-time),visibility var(--transition-time);
-    -o-transition: opacity var(--transition-time),visibility var(--transition-time);
-    transition: opacity var(--transition-time),visibility var(--transition-time);
+    -webkit-transition: opacity 0.9s linear,visibility 0.9s linear;
+    -o-transition: opacity 0.9s linear,visibility 0.9s linear;
+    transition: opacity 0.9s linear,visibility 0.9s linear;
 }
 .open__add-modal {
     display: flex;
