@@ -26,3 +26,8 @@
     -o-transition: opacity var(--transition-time),visibility var(--transition-time);
     transition: opacity var(--transition-time),visibility var(--transition-time);
 }
+.open__add-modal {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}

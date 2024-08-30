@@ -55,7 +55,7 @@ export async function clientsModalChangeGet(clientId) {
         const contactsContainer = document.querySelector('.contacts__container');
         contactsContainer.innerHTML = '';
 
-        contacts.forEach((contact, index) => {
+    contacts.forEach((contact, index) => {
             const contactDiv = document.createElement('div');
             contactDiv.classList.add('contacts__group');
             const buttonDelContact = document.createElement('button');
@@ -135,30 +135,30 @@ export async function clientsModalChangeGet(clientId) {
             });
        
     }  
-    const validate = new window.JustValidate('#formChange',{
-        validateBeforeSubmitting: true,
-      })
-      validate.addField('#surnameChange',[
-        {
-          rule: 'customRegexp',
-          value: /[a-z]/gi,   
-          errorMessage: 'Фамилия не состоит из цифр',
-        },
-        {
-          rule: 'required',
-          errorMessage: 'Поле не может быть пустым',
-        } 
-      ])
-      .addField('#nameChange',[
-        {
-          rule: 'customRegexp',
-          value: /[a-z]/gi,   
-          errorMessage: 'Фамилия не состоит из цифр',
-        },
-        {
-          rule: 'required',
-          errorMessage: 'Поле не может быть пустым',
-        } 
-      ]).onSuccess((event)=> {
-        event.clientsModalChangeGet(clientId)
-      })
+    // const validate = new window.JustValidate('#formChange',{
+    //     validateBeforeSubmitting: true,
+    //   })
+    //   validate.addField('#surnameChange',[
+    //     {
+    //       rule: 'customRegexp',
+    //       value: /[a-z]/gi,   
+    //       errorMessage: 'Фамилия не состоит из цифр',
+    //     },
+    //     {
+    //       rule: 'required',
+    //       errorMessage: 'Поле не может быть пустым',
+    //     } 
+    //   ])
+    //   .addField('#nameChange',[
+    //     {
+    //       rule: 'customRegexp',
+    //       value: /[a-z]/gi,   
+    //       errorMessage: 'Фамилия не состоит из цифр',
+    //     },
+    //     {
+    //       rule: 'required',
+    //       errorMessage: 'Поле не может быть пустым',
+    //     } 
+    //   ]).onSuccess((event)=> {
+    //     event.clientsModalChangeGet(clientId)
+    //   })

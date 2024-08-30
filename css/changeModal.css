@@ -78,8 +78,7 @@
 .header__popup{
    position: relative;
    width: 450px;
-   min-height: 400px;
-   max-height: fit-content;
+  height: fit-content;
    margin: 0 auto;
    padding: 15px 0px 30px 0px;
    top: 8%;
@@ -321,6 +320,11 @@
 .contacts__group {
     display: flex;
     flex-direction: row;
+}
+.open__add-modal {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
 }
 #form{
     display: flex;

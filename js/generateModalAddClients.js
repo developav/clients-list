@@ -1,3 +1,4 @@
+import  {premissionContact}  from "./addClients.js";
 export default function addSelectContact(labelContact){
     const addSelect = document.createElement('select'),
           inputContact = document.createElement('input'),
@@ -6,6 +7,7 @@ export default function addSelectContact(labelContact){
           optionEmail = document.createElement('option'),
           optionVk = document.createElement('option'),
           optionFacebook = document.createElement('option'),
+          contactGroup = document.createElement('div'),
           buttonDelContact = document.createElement('button');
     buttonDelContact.className = 'deleteContacts__button';
     buttonDelContact.setAttribute('data-tooltip','Удалить контакт')
@@ -17,12 +19,14 @@ export default function addSelectContact(labelContact){
     inputContact.setAttribute('placeholder', 'Введите данные контакта');
     inputContact.setAttribute('id', 'contactInputAdd');
     inputContact.appendChild(buttonDelContact);
+    contactGroup.className = 'contacts__group';
     addSelect.setAttribute('name', 'type');
     addSelect.className = 'select';
-    labelContact.classList.add('open');
-    labelContact.appendChild(addSelect);
-    labelContact.appendChild(inputContact);
-    labelContact.appendChild(buttonDelContact);
+    labelContact.classList.add('open__add-modal');
+    labelContact.appendChild(contactGroup)
+    contactGroup.appendChild(addSelect);
+    contactGroup.appendChild(inputContact);
+    contactGroup.appendChild(buttonDelContact);
     optionTel.value = 'Телефон';
     optionTel.textContent = 'Телефон';
     optionTel.classList.add('contact__name')
@@ -43,11 +47,14 @@ export default function addSelectContact(labelContact){
     addSelect.appendChild(optionEmail);
     addSelect.appendChild(optionVk);
     addSelect.appendChild(optionFacebook);
+
+
     buttonDelContact.addEventListener('click', function(){
         labelContact.removeChild(contactGroup);
         inputContact.parentNode.removeChild(inputContact);
         addSelect.parentNode.removeChild(addSelect)
         buttonDelContact.parentNode.removeChild(buttonDelContact)
+        premissionContact()
     })
 }   
 
