@@ -1,6 +1,8 @@
 import {addContact} from "./contact.js";
 import  { deleteClient }  from "./method.js";
 import { createContactTypeSelect } from "./contact.js";
+import JustValidate from '../node_modules/just-validate/dist/just-validate.es.js'
+
 
 const modal = document.querySelector('.header__change-modal');
 const buttonClose = document.querySelector('.header__close-change');
@@ -68,10 +70,22 @@ export async function clientsModalChangeGet(clientId) {
             contactsContainer.appendChild(contactDiv);
             contactDiv.appendChild(buttonDelContact);
 
-           
+           const deleteAnimate = [
+               {transform: "translateX(0%)"},
+               {transform: "translateX(-150%)"}
+            ];
+            const deleteAnimateTiming = {
+                duration: 400,
+                iterations: 1,
+            };
 
             buttonDelContact.addEventListener('click', function(){
-                contactsContainer.removeChild(contactDiv);
+                contactDiv.animate(deleteAnimate,deleteAnimateTiming)
+                setTimeout(()=>{
+                    contactsContainer.removeChild(contactDiv);
+                },300)
+               
+                
             })
         });
         
@@ -135,30 +149,41 @@ export async function clientsModalChangeGet(clientId) {
             });
        
     }  
-    // const validate = new window.JustValidate('#formChange',{
-    //     validateBeforeSubmitting: true,
-    //   })
-    //   validate.addField('#surnameChange',[
-    //     {
-    //       rule: 'customRegexp',
-    //       value: /[a-z]/gi,   
-    //       errorMessage: 'Фамилия не состоит из цифр',
-    //     },
-    //     {
-    //       rule: 'required',
-    //       errorMessage: 'Поле не может быть пустым',
-    //     } 
-    //   ])
-    //   .addField('#nameChange',[
-    //     {
-    //       rule: 'customRegexp',
-    //       value: /[a-z]/gi,   
-    //       errorMessage: 'Фамилия не состоит из цифр',
-    //     },
-    //     {
-    //       rule: 'required',
-    //       errorMessage: 'Поле не может быть пустым',
-    //     } 
-    //   ]).onSuccess((event)=> {
-    //     event.clientsModalChangeGet(clientId)
-    //   })
+    const validates = new JustValidate('#formChange',{
+        validateBeforeSubmitting: true,
+      })
+      validates.addField('#surnameChange',[
+        {
+          rule: 'customRegexp',
+          value: /[a-z]/gi,   
+          errorMessage: 'Фамилия не состоит из цифр',
+        },
+        {
+          rule: 'required',
+          errorMessage: 'Поле не может быть пустым',
+        } 
+      ])
+      .addField('#nameChange',[
+        {
+          rule: 'customRegexp',
+          value: /[a-z]/gi,   
+          errorMessage: 'Фамилия не состоит из цифр',
+        },
+        {
+          rule: 'required',
+          errorMessage: 'Поле не может быть пустым',
+        } 
+      ])
+      .addField('#lastNameChange',[
+        {
+          rule: 'customRegexp',
+          value: /[a-z]/gi,   
+          errorMessage: 'Отчество не состоит из цифр',
+        },
+        {
+          rule: 'required',
+          errorMessage: 'Поле не может быть пустым',
+        } 
+      ]).onSuccess((event)=> {
+        event.clientsModalChangeGet(clientId)
+      })

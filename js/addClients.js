@@ -104,12 +104,13 @@ export const premissionContact = () => {
   if (contactGroupLine.length >= 10) {
       buttonAddContact.setAttribute('disabled', 'true');
       buttonAddContact.style.display = 'none'; // Скрываем кнопку
+  }else if(contactGroupLine === 0){
+    labelContact.classList.remove('open__add-modal')
   } else {
       buttonAddContact.removeAttribute('disabled');
       buttonAddContact.style.display = ''; // Показываем кнопку, если меньше 10 контактов
   }
 };
-
 // Вызов функции при загрузке страницы или открытии модального окна
 premissionContact();
 

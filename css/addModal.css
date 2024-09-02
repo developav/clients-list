@@ -9,22 +9,21 @@
     width: 100%;
 }
 .header__pop-modal{
-    display: none;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 100;
-    background-color: rgba(0,0,0,.4);
+    z-index: -5;
+    background-color: rgba(0,0,0,.7);
     cursor: pointer;
     overflow-y: auto;
     overflow-x: hidden;
     vertical-align: top;
     opacity: 0;
-    -webkit-transition: opacity 0.9s linear,visibility 0.9s linear;
-    -o-transition: opacity 0.9s linear,visibility 0.9s linear;
-    transition: opacity 0.9s linear,visibility 0.9s linear;
+    -webkit-transition: visibility 0.9s linear;
+    -o-transition: visibility 0.9s linear;
+    transition: visibility 0.9s linear;
 }
 .open__add-modal {
     display: flex;

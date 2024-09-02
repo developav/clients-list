@@ -1,4 +1,3 @@
-
 import { filterClientsaByName } from './tranformData.js';
 import { generateTable } from './generateTable.js';
 // Функция получения списка клиентов
@@ -53,7 +52,7 @@ export async function deleteClient(id) {
 }
 export const addClient =  async (data) => {
     try{
-        const response =  await fetch('http://localhost:3000/api/clients', {
+        const response =  await fetch(URL_CLIENT_LIST, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body:JSON.stringify(data),

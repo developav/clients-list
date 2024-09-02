@@ -39,23 +39,18 @@
     color: #9873FF;
 }
 .header__change-modal{
-    display: none;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 100;
+    z-index: -5;
     background-color: rgba(0,0,0,.7);
     cursor: pointer;
     overflow-y: auto;
     overflow-x: hidden;
     vertical-align: top;
- 
     opacity: 0;
-    -webkit-transition: opacity 0.3s linear;
-    -o-transition: opacity 0.3s linear;
-    transition: opacity 0.3s linear;
 }
 .header__change-modal::before {
     content: "";
@@ -87,9 +82,15 @@
    z-index: 10;
    transition: opacity 2.3s linear;
 }
+@keyframes modalScale {
+    from{transform: scale(1.2)}
+    to {transform: scale(1.0);}
+}
 .modal__open{
-    display: block;
     opacity: 1;
+    transition: opacity 0.3s linear;
+    z-index: 100;
+    animation: modalScale 0.3s ease-in-out;
 }
 .modal__open .header__popup {
     opacity: 1;
@@ -323,9 +324,14 @@
     padding: 25px 30px;
     background-color: #F4F3F6;
 }
+@keyframes contactMove {
+    from{transform: translateX(-100%);}
+    to{transform: translateX(0%);}
+}
 .contacts__group {
     display: flex;
     flex-direction: row;
+    animation: contactMove 0.3s ease-in-out;
 }
 .open__add-modal {
     display: flex;
@@ -357,9 +363,10 @@
     color: #B0B0B0;
 }
 .open {
-    display: flex;
-    flex-direction: row;
     opacity: 1;
+    transition: opacity 0.3s linear;
+    z-index: 100;
+    animation: modalScale 0.3s ease-in-out;
 }
 .btn__add_contact{
     display: flex;
@@ -442,6 +449,11 @@
     border-radius: 0px;
     border: none;
     z-index: 10;
+    transition: opacity 0.3s linear;
+}
+@keyframes deleteModal {
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
 .modal__group{
     position: fixed;
@@ -456,10 +468,7 @@
     overflow-x: hidden;
     vertical-align: top;
     opacity: 1;
-    
-    -webkit-transition: opacity 0.3s linear;
-    -o-transition: opacity 0.3s linear;
-    transition: opacity 0.3s linear;
+    animation: modalScale 0.3s ease-in-out, deleteModal 0.5s ease-in-out;
 }
 .modal__group-head {
     font-size: 18px;

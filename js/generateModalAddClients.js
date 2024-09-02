@@ -47,13 +47,25 @@ export default function addSelectContact(labelContact){
     addSelect.appendChild(optionEmail);
     addSelect.appendChild(optionVk);
     addSelect.appendChild(optionFacebook);
-
+    
+    const deleteAnimate = [
+        {transform: "translateX(0%)"},
+        {transform: "translateX(-150%)"}
+     ];
+     const deleteAnimateTiming = {
+         duration: 400,
+         iterations: 1,
+     };
 
     buttonDelContact.addEventListener('click', function(){
-        labelContact.removeChild(contactGroup);
-        inputContact.parentNode.removeChild(inputContact);
-        addSelect.parentNode.removeChild(addSelect)
-        buttonDelContact.parentNode.removeChild(buttonDelContact)
+        contactGroup.animate(deleteAnimate,deleteAnimateTiming)
+        setTimeout(()=>{
+            labelContact.removeChild(contactGroup);
+            inputContact.parentNode.removeChild(inputContact);
+            addSelect.parentNode.removeChild(addSelect)
+            buttonDelContact.parentNode.removeChild(buttonDelContact)
+        },300)
+       
         premissionContact()
     })
 }   

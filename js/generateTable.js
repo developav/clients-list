@@ -75,21 +75,28 @@ export async function generateTable(fetchDataFunction) {
           <button class="delete__btn" data-id="${id}" data-action="delete">Удалить</button>
         </div>
       </td>`;
-
-    tableBody.appendChild(row);
+      const deleteAnimate = [
+        {opacity: "0"},
+        {opacity: "1"}
+     ];
+     const deleteAnimateTiming = {
+         duration: 800,
+         iterations: 1,
+     };
+    tableBody.appendChild(row).animate(deleteAnimate,deleteAnimateTiming);
   });
 
   // Добавляем делегирование событий для кнопок "Показать еще"
-  tableBody.addEventListener('click', event => {
-    if (event.target.classList.contains('show-more-btn')) {
-      const button = event.target;
-      const clientRow = button.closest('.clients__row-id');
-      const extraContactsUl = clientRow.querySelector('.extra-contacts');
-      extraContactsUl.classList.toggle('hidden__contact');
-      button.classList.toggle('close__contact')
-      button.textContent = extraContactsUl.classList.contains('hidden__contact') ? ` +${extraContactsUl.childElementCount}` : '';
-    }
-  });
+  // tableBody.addEventListener('click', event => {
+  //   if (event.target.classList.contains('show-more-btn')) {
+  //     const button = event.target;
+  //     const clientRow = button.closest('.clients__row-id');
+  //     const extraContactsUl = clientRow.querySelector('.extra-contacts');
+  //     extraContactsUl.classList.toggle('hidden__contact');
+  //     button.classList.toggle('close__contact')
+  //     button.textContent = extraContactsUl.classList.contains('hidden__contact') ? ` +${extraContactsUl.childElementCount}` : '';
+  //   }
+  // });
 
   // Удаление клиента
   deleteSearchClients();
@@ -101,8 +108,8 @@ function sortByField(clients, field, direction) {
     if (field === 'id') {
       return direction === 'asc' ? a.id - b.id : b.id - a.id;
     } else if (field === 'name') {
-      const nameA = `${a.surname} ${a.name} ${a.lastName}.toLowerCase()`;
-      const nameB = `${b.surname} ${b.name} ${b.lastName}.toLowerCase()`;
+      const nameA = `${a.surname} ${a.name} ${a.lastName}`.toLowerCase();
+      const nameB = `${b.surname} ${b.name} ${b.lastName}`.toLowerCase();
 
 if (nameA < nameB) return direction === 'asc' ? -1 : 1;
       if (nameA > nameB) return direction === 'asc' ? 1 : -1;
@@ -141,7 +148,7 @@ addEventListener('DOMContentLoaded', ()=> {
     const sortCreateSvg = document.querySelector('.btn-sort__create-arrow');
     sortCreateSvg.classList.toggle('toggle')
     sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-    sortField = 'createdAt'; // Устанавливаем поле для сортировки по имени
+    sortField = 'createdAt'; // Устанавливаем поле для сортировки по дате создания
     // Перегенерируем таблицу с новым направлением сортировки
     generateTable(fetchData());
   });
@@ -151,10 +158,8 @@ addEventListener('DOMContentLoaded', ()=> {
     const sortCreateSvg = document.querySelector('.btn-sort__last-arrow');
     sortCreateSvg.classList.toggle('toggle')
     sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-    sortField = 'updatedAt'; // Устанавливаем поле для сортировки по имени
+    sortField = 'updatedAt'; // Устанавливаем поле для сортировки по дате изменения
     // Перегенерируем таблицу с новым направлением сортировки
     generateTable(fetchData());
   });
-
-
 });
